@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2251644384318792526}
   - component: {fileID: 3112214542702827026}
   - component: {fileID: 5680608717603737679}
+  - component: {fileID: 859223858785024240}
   m_Layer: 0
   m_Name: Asteroid Variant 6
   m_TagString: Untagged
@@ -171,3 +172,15 @@ PolygonCollider2D:
       - {x: 0.06600183, y: 0.021991298}
       - {x: 0.024992213, y: 0.06400126}
   m_UseDelaunayMesh: 0
+--- !u!114 &859223858785024240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3698737033720858348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c6bd76e3fda64ebeb693e5a6929c48c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
