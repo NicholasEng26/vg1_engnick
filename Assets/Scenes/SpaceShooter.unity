@@ -292,8 +292,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.36, y: 0.39}
+    pivot: {x: 1, y: 0.5}
+    oldSize: {x: 1, y: 1.0833334}
     newSize: {x: 0.36, y: 0.39}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -301,28 +301,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.058181442, y: 0.153182}
-      - {x: -0.019945055, y: 0.16853204}
-      - {x: -0.05772782, y: 0.20409101}
-      - {x: -0.14, y: 0.195}
-      - {x: -0.14636347, y: 0.13045448}
-      - {x: -0.14691728, y: 0.07377185}
-      - {x: -0.13436326, y: 0.04799495}
-      - {x: -0.13620456, y: 0.031627566}
-      - {x: -0.18454547, y: 0.035454214}
-      - {x: -0.18420705, y: -0.03386668}
-      - {x: -0.13681771, y: -0.04136291}
-      - {x: -0.14894642, y: -0.07676632}
-      - {x: -0.14772724, y: -0.17681797}
-      - {x: -0.12308683, y: -0.20707032}
-      - {x: -0.08318233, y: -0.21090926}
-      - {x: -0.0022337139, y: -0.16312145}
-      - {x: 0.06954522, y: -0.13727275}
-      - {x: 0.06954522, y: -0.13727275}
-      - {x: 0.07002474, y: -0.07927008}
-      - {x: 0.17999999, y: -0.055}
-      - {x: 0.1894955, y: 0.048600346}
-      - {x: 0.07318058, y: 0.07727275}
+    - - {x: -0.25, y: 0.375}
+      - {x: -0.5277778, y: 0.5416667}
+      - {x: -0.8888889, y: 0.5416667}
+      - {x: -0.9444445, y: 0.375}
+      - {x: -1, y: 0.18055555}
+      - {x: -1, y: -0.29166666}
+      - {x: -0.9166667, y: -0.5416667}
+      - {x: -0.6111111, y: -0.5416667}
+      - {x: -0.25, y: -0.375}
+      - {x: 0, y: -0.15277778}
+      - {x: 0, y: 0.20833333}
   m_UseDelaunayMesh: 0
 --- !u!50 &1181138996
 Rigidbody2D:
@@ -334,7 +323,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 1181138993}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 1
+  m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -392,7 +381,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5ca35b3b6e06d4184a734ecc4e3daff3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 124a36e7e18b545cda07714ad3bb8bf1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -430,6 +419,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1800c731d1e47420f9c02de5d20d7368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 0}
+  firingDelay: 1
 --- !u!1001 &1319784389
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -516,7 +507,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 467bc1ca82a494f48a68104034e80790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPoints: []
+  asteroidPrefabs: []
+  explosionPrefab: {fileID: 0}
+  maxAsteroidDelay: 2
+  minAsteroidDelay: 0.2
   timeElapsed: 0
+  asteroidDelay: 0
 --- !u!4 &1533488926
 Transform:
   m_ObjectHideFlags: 0
