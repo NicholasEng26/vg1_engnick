@@ -75,19 +75,23 @@ namespace Platformer {
         void OnCollisionStay2D(Collision2D other) {
             // Check that we collided with Ground
             if(other.gameObject.layer == LayerMask.NameToLayer("Ground")) {
+
                 // Check what is directly below our character's feet
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.85f);
-                //Debug.DrawRay(transform.position, Vector2.down * 0.7f, Color.red, 2f); // Draws a red line for 2 seconds
+                RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, Vector2.down, 0.85f);
+                // Debug.DrawRay(transform.position, Vector2.down * 0.85f); // Visualize Raycast
 
-                if(hit.collider != null) {
-                    Debug.Log("Raycast hit: " + hit.collider.gameObject.name);
+                // We might have multiple things below our character's feet
+                for(int i = 0; i < hits.Length; i++) {
+                    RaycastHit2D hit = hits[i];
 
+                    // Check that we collided with ground below our feet
                     if(hit.collider.gameObject.layer == LayerMask.NameToLayer("Ground")) {
+                        // Reset jump count
                         jumpsLeft = 2;
-                        Debug.Log("Jumps left reset to: " + jumpsLeft);
                     }
                 }
             }
         }
+
     }
 }
