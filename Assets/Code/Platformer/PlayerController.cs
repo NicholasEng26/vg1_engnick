@@ -9,6 +9,8 @@ namespace Platformer {
         Rigidbody2D _rigidbody2D;
         public Transform aimPivot;
         public GameObject projectilePrefab;
+        SpriteRenderer sprite;
+        Animator animator;
 
         // State Tracking
         public int jumpsLeft;
@@ -16,17 +18,31 @@ namespace Platformer {
         // Methods
         void Start() {
             _rigidbody2D = GetComponent<Rigidbody2D>();
+            sprite = GetComponent<SpriteRenderer>();
+            animator = GetComponent<Animator>();
+        }
+
+        void FixedUpdate() {
+            // This Update Event is sync'd with the Physics Engine
+            animator.SetFloat("Speed", _rigidbody2D.velocity.magnitude);
+            if(_rigidbody2D.velocity.magnitude > 0) {
+                animator.speed = _rigidbody2D.velocity.magnitude / 3f;
+            } else {
+                animator.speed = 1f;
+            }
         }
 
         void Update() {
             // Move Player Left
             if (Input.GetKey(KeyCode.A)) {
                 _rigidbody2D.AddForce(Vector2.left * 18f * Time.deltaTime, ForceMode2D.Impulse);
+                sprite.flipX = true;
             }
 
             // Move Player Right
             if (Input.GetKey(KeyCode.D)) {
                 _rigidbody2D.AddForce(Vector2.right * 18f * Time.deltaTime, ForceMode2D.Impulse);
+                sprite.flipX = false;
             }
 
             // Jump
@@ -36,6 +52,7 @@ namespace Platformer {
                     _rigidbody2D.AddForce(Vector2.up * 15f, ForceMode2D.Impulse);
                 }
             }
+            animator.SetInteger("JumpsLeft", jumpsLeft);
 
             // Aim Toward Mouse
             Vector3 mousePosition = Input.mousePosition;
@@ -56,11 +73,11 @@ namespace Platformer {
         }
 
         void OnCollisionStay2D(Collision2D other) {
-            Debug.Log("Collided with: " + other.gameObject.name);
-
+            // Check that we collided with Ground
             if(other.gameObject.layer == LayerMask.NameToLayer("Ground")) {
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.7f);
-                Debug.DrawRay(transform.position, Vector2.down * 0.7f, Color.red, 2f); // Draws a red line for 2 seconds
+                // Check what is directly below our character's feet
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.85f);
+                //Debug.DrawRay(transform.position, Vector2.down * 0.7f, Color.red, 2f); // Draws a red line for 2 seconds
 
                 if(hit.collider != null) {
                     Debug.Log("Raycast hit: " + hit.collider.gameObject.name);
