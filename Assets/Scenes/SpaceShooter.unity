@@ -159,7 +159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 25, y: 100}
+  m_AnchoredPosition: {x: 25, y: 80}
   m_SizeDelta: {x: 175, y: 86}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &58613638
@@ -205,7 +205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 58613639}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1476392423}
+        m_TargetAssemblyTypeName: SpaceShooter.Ship, Assembly-CSharp
+        m_MethodName: UpgradeHull
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &58613639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,7 +269,7 @@ GameObject:
   - component: {fileID: 106524207}
   - component: {fileID: 106524206}
   m_Layer: 5
-  m_Name: Button - Missile Spread
+  m_Name: Button - Missile Speed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -280,7 +292,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 25, y: -100}
+  m_AnchoredPosition: {x: 25, y: -120}
   m_SizeDelta: {x: 175, y: 86}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &106524206
@@ -326,7 +338,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 106524207}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1533488925}
+        m_TargetAssemblyTypeName: SpaceShooter.GameController, Assembly-CSharp
+        m_MethodName: UpgradeMissileSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &106524207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -726,7 +750,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 25, y: 200}
+  m_AnchoredPosition: {x: 25, y: 180}
   m_SizeDelta: {x: 175, y: 86}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &763512192
@@ -772,7 +796,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 763512193}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1476392423}
+        m_TargetAssemblyTypeName: SpaceShooter.Ship, Assembly-CSharp
+        m_MethodName: RepairHull
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &763512193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -899,7 +935,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Multiplier $X
+  m_text: Multiplier $100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -926,8 +962,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1008,11 +1044,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1670623031}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 14, y: 325}
-  m_SizeDelta: {x: -646, y: 20}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -25}
+  m_SizeDelta: {x: 500, y: 20}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &948900069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1366,7 +1402,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hull Strength $X
+  m_text: Hull Strength $100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1393,8 +1429,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1508,7 +1544,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 8992182262691541502, guid: 5bdfde7b098d0431bb31c4b25755a56b, type: 3}
+  imageHealthBar: {fileID: 948900069}
+  hullUpgradeText: {fileID: 1310416999}
+  fireSpeedUpgradeText: {fileID: 1477922797}
   firingDelay: 1
+  healthMax: 100
+  health: 100
 --- !u!95 &1476392424
 Animator:
   serializedVersion: 5
@@ -1737,7 +1778,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fire Speed $X
+  m_text: Fire Speed $100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1764,8 +1805,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1850,7 +1891,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 25, y: 0}
+  m_AnchoredPosition: {x: 25, y: -20}
   m_SizeDelta: {x: 175, y: 86}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1529013014
@@ -1896,7 +1937,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1529013015}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1476392423}
+        m_TargetAssemblyTypeName: SpaceShooter.Ship, Assembly-CSharp
+        m_MethodName: UpgradeFireSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1529013015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1982,10 +2035,18 @@ MonoBehaviour:
   - {fileID: 4274989011744087315, guid: c98281c82a9e4408a87dfb4c074260a9, type: 3}
   - {fileID: 6602492732132329282, guid: f1275d4dc587f4197a25da02dbdda0b0, type: 3}
   explosionPrefab: {fileID: 2415398515772161349, guid: c4fe7fc69075041738c886fd3a32497d, type: 3}
+  textScore: {fileID: 164110267}
+  textMoney: {fileID: 1232923147}
+  missileSpeedUpgradeText: {fileID: 2026744883}
+  bonusUpgradeText: {fileID: 819841455}
   maxAsteroidDelay: 2
   minAsteroidDelay: 0.2
   timeElapsed: 0
   asteroidDelay: 0
+  score: 0
+  money: 0
+  missileSpeed: 2
+  bonusMultiplier: 1
 --- !u!4 &1533488926
 Transform:
   m_ObjectHideFlags: 0
@@ -2089,7 +2150,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Repair $X
+  m_text: Repair $100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2116,8 +2177,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2311,7 +2372,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 25, y: -200}
+  m_AnchoredPosition: {x: 25, y: -220}
   m_SizeDelta: {x: 175, y: 86}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1824387438
@@ -2357,7 +2418,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1824387439}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1533488925}
+        m_TargetAssemblyTypeName: SpaceShooter.GameController, Assembly-CSharp
+        m_MethodName: UpgradeBonus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1824387439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2484,7 +2557,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Missile Spread $X
+  m_text: Missile Speed $50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2511,8 +2584,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
