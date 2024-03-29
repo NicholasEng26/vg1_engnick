@@ -19,6 +19,7 @@ namespace Platformer {
         // State Tracking
         public int jumpsLeft;
         public int score;
+        public bool isPaused;
 
         // Methods
         void Awake() {
@@ -47,6 +48,10 @@ namespace Platformer {
             // Update UI
             scoreUI.text = score.ToString();
 
+            if(isPaused) {
+                return;s
+            }
+
             // Move Player Left
             if (Input.GetKey(KeyCode.A)) {
                 _rigidbody2D.AddForce(Vector2.left * 18f * Time.deltaTime, ForceMode2D.Impulse);
@@ -57,6 +62,11 @@ namespace Platformer {
             if (Input.GetKey(KeyCode.D)) {
                 _rigidbody2D.AddForce(Vector2.right * 18f * Time.deltaTime, ForceMode2D.Impulse);
                 sprite.flipX = false;
+            }
+
+            // (We are in the Update function of Platfomer/PlayerController.cs in this screenshot)
+            if(Input.GetKeyDown(KeyCode.Escape)) {
+                MenuController.instance.Show();
             }
 
             // Jump
@@ -105,6 +115,11 @@ namespace Platformer {
                     }
                 }
             }
+        }
+
+        public void ResetScore() {
+            score = 0;
+            PlayerPrefs.DeleteKey("Score");
         }
 
     }
