@@ -49,7 +49,7 @@ namespace Platformer {
             scoreUI.text = score.ToString();
 
             if(isPaused) {
-                return;s
+                return;
             }
 
             // Move Player Left
