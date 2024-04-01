@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Platfomer {
+namespace Platformer {
     public class MenuController : MonoBehaviour {
         public static MenuController instance;
 
